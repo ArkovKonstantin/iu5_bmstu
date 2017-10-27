@@ -20,7 +20,7 @@ def test_3():
 
 @print_result
 def test_4():
-    return [1, 2]
+    return ['f','f','k']
 
 
 test_1()
