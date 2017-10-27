@@ -35,3 +35,45 @@
 # test_4
 # 1
 # 2
+
+'''def print_result(test):
+    def wrapper(*arg):
+        rtn = test(*arg)
+        print(test.__name__)
+        if type(rtn) == list:
+
+            for x in rtn:
+                print(x)
+        elif type(rtn) == dict:
+
+            for k, v in rtn.items():
+                print(k, '=', v)
+        else:
+            print(rtn)
+        return rtn
+
+                # test(*arg)
+
+    return wrapper'''
+
+def print_result(func):
+    def new_func(*args):
+        res = func(*args)
+        print(func.__name__)
+        if type(res) == list:
+            [print(x) for x in res]
+        elif type(res) == dict:
+            [print(key,'=',value) for key,value in res.items()]
+        else:
+            print(res)
+        return(res)
+    return new_func
+
+
+'''@print_result
+def test():
+    return [1, 2, 3]'''
+
+
+
+#test()

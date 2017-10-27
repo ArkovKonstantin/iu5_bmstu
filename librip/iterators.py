@@ -1,4 +1,5 @@
 # Итератор для удаления дубликатов
+
 class Unique(object):
     def __init__(self, items, **kwargs):
         # Нужно реализовать конструктор
@@ -7,11 +8,24 @@ class Unique(object):
         # Например: ignore_case = True, Aбв и АБВ разные строки
         #           ignore_case = False, Aбв и АБВ одинаковые строки, одна из них удалится
         # По-умолчанию ignore_case = False
-        pass
+        self.items = items
+        self.ignore_case = False
+        if 'ignore_case' in kwargs:
+            self.ignore_case = kwargs['ignore_case']
+        self.returned = set()
 
     def __next__(self):
-        # Нужно реализовать __next__    
-        pass
+        # Нужно реализовать __next__
+        for item in self.items:
+            if type(item) == str and self.ignore_case is True:
+                if item.lower() not in self.returned:
+                    self.returned.add(item.lower())
+                    return item
+            else:
+                if item not in self.returned:
+                    self.returned.add(item)
+                    return item
+        raise StopIteration()
 
     def __iter__(self):
         return self
