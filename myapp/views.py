@@ -6,9 +6,9 @@ from django.http import HttpResponse
 def index(request):
     data = {
         'orders': [
-            {'title': 'Первый заказ', 'id': '1'},
-            {'title': 'Второй заказ', 'id': '2'},
-            {'title': 'Третий заказ', 'id': '3'}
+            {'title': 'First order', 'id': '1'},
+            {'title': 'Second order', 'id': '2'},
+            {'title': 'Third order', 'id': '3'}
         ]
     }
     return render(request, 'index.html', data)
