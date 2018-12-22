@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/lab4.iml" filepath="$PROJECT_DIR$/.idea/lab4.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/djangopr1.iml" filepath="$PROJECT_DIR$/.idea/djangopr1.iml" />
+>>>>>>> remotes/lab6/master
     </modules>
   </component>
 </project>
